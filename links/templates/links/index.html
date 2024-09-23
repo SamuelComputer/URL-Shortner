@@ -1,0 +1,20 @@
+{% extends 'links/base.html' %}
+{% block content %}
+<div style="max-width: 66.666667%; margin: 0 auto; padding: 0 2.5rem;">
+    <h1 style="font-size: 2.25rem; margin-bottom: 0.5rem;">Links</h1>
+    {% for link in links %}
+    <div style="border: 1px solid #E2E8F0; border-radius: 0.25rem; padding: 3rem; margin: 1.5rem 0; background-color: #FFF; transition: background-color 0.2s;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.5rem;">
+            <p style="font-size: 1.5rem;">{{ link.name }}</p>
+            <p style="background-color: #C6F6D5; border-radius: 9999px; padding: 0.5rem 1.5rem;">Clicks: {{ link.clicks }}</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <p><a style="text-decoration: underline; color: #2196F3;" href="{{ link.url }}">{{ link.url }}</a></p>
+            <p><a style="text-decoration: underline; color: #2196F3;" ><a target="_blank" href="{% url "root_link" link.slug %}"> Open / {{ link.slug }}</a></p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+

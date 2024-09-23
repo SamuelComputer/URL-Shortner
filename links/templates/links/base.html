@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links S</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F9F9F9;
+            color: #333333;
+        }
+        .header {
+            color: #333333;
+            background-color: #4CAF50;
+            border-bottom: 1px solid #E2E8F0;
+            margin-bottom: 2rem;
+            padding: 1.25rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #FFF;
+        }
+        .nav {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav a {
+            color: #FFF;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            color: #FFC107;
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #2196F3;
+            border: none;
+            color: #FFF;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #1976D2;
+        }
+        .button svg {
+            height: 1.25rem;
+            width: 1.25rem;
+            margin-right: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <a href="{% url 'home' %}" class="title">Link.ly</a>
+        </div>
+        <nav class="nav">
+            <a href="{% url 'home' %}">All Links</a>
+        </nav>
+        <button class="button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 01-2 0v-3H7a1 1 0 110-2h3V6a1 1 0 011-1z"/>
+            </svg>
+            
+            <a href="{% url 'add_link' %}">Add Link</a>
+            
+        </button>
+    </header>
+
+    {% block content %}{% endblock content %}
+
+</body>
+</html>
